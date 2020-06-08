@@ -22,3 +22,17 @@ exports.addMessage = functions.https.onRequest(async (req, res) => {
         "transactionId": "xxx",
         "confirmId" : "xxx"`});
   });
+exports.testCall = functions.https.onRequest(async (req, res) => {
+    // Grab the text parameter.
+    const original = req.query.text;
+    res.json(
+    {
+        result: 
+        {
+            resCode: "00",
+            resDesc: original,
+            transactionId: "xxx",
+            confirmId : "xxx"
+        }
+    });
+  });
